@@ -12,15 +12,15 @@
 	<body ng-controller="appCtrl">
 		<div class="header"><h4 style="background-color:white;">Board</h4></div>
 		<div id="content">
-			<canvas id="board" width="{{boardWidth}}" height="{{boardHeight}}"
+			<canvas id="board" width="{{boardWidth}}" height="{{boardHeight}}" canvas-bg-white
 			ng-style="{'cursor': 'url(assets/icons/'+curIcon+'.cur),default'}" >
-			</canvas>			
+			</canvas>
 		</div>
 		<div class="tools row">
 			<!-- <select id="penColor" class="col-md-12 space" ng-model="penColor" ng-options="color for color in colorList" ></select>ng-class="getCanvasIcon()" -->
 			<select id="penColor" class="btn btn-default space" ng-model="penColor" ng-class="!showColorDdl?'hide':''"
 				style="background-color:{{penColor}}">
-				<option ng-repeat="color in colorList" value="{{color}}"
+				<option ng-repeat="color in colorList" ng-value="{{color}}"
 				style="background-color:white">{{color}}</option>
 			</select>
 			<button class="btn btn-default space" ng-click="selectPen()">
@@ -31,7 +31,7 @@
 			</button>
 			
 			<select id="brushSize" class="btn btn-default space" ng-model="brushSize">
-				<option ng-repeat="brushSize in brushSizeList" value="{{brushSize}}"
+				<option ng-repeat="brushSize in brushSizeList" ng-value="{{brushSize}}"
 				style="background-color:white">{{brushSize}}</option>
 			</select>
 			<button class="btn btn-default space" ng-click="clrContent()">

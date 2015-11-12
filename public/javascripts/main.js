@@ -8,10 +8,30 @@ app.controller('appCtrl', function($scope) {
 	// $scope.boardMarginTop = window.innerHeight * 0.05 + "px";
 	// $scope.boardMarginLeft = window.innerWidth * 0.05 + "px";
 
-	$scope.colorList = ['blue', 'red', 'green', 'yellow', 'orange', 'white'];
+	$scope.colorList = ['aliceblue', 'antiquewhite', 'aqua', 'aquamarine', 'azure',
+		'beige', 'bisque', 'black', 'blanchedalmond', 'blue', 'blueviolet', 'brown', 'burlywood',
+		'cadetblue', 'chartreuse', 'chocolate', 'coral', 'cornflowerblue', 'cornsilk', 'crimson', 'cyan', 'darkblue',
+		'darkcyan', 'darkgoldenrod', 'darkgray', 'darkgreen', 'darkgrey', 'darkkhaki', 'darkmagenta', 'darkolivegreen',
+		'darkorange', 'darkorchid', 'darkred', 'darksalmon', 'darkseagreen', 'darkslateblue', 'darkslategray', 'darkslategrey',
+		'darkturquoise', 'darkviolet', 'deeppink', 'deepskyblue', 'dimgray', 'dimgrey', 'dodgerblue', 'firebrick', 'floralwhite',
+		'forestgreen', 'fuchsia', 'gainsboro', 'ghostwhite', 'gold', 'goldenrod', 'gray', 'grey', 'green',
+		'greenyellow', 'honeydew', 'hotpink', 'indianred', 'indigo', 'ivory', 'khaki', 'lavender', 'lavenderblush',
+		'lawngreen', 'lemonchiffon', 'lightblue', 'lightcoral', 'lightcyan', 'lightgoldenrodyellow', 'lightgray',
+		'lightgreen', 'lightgrey', 'lightpink', 'lightsalmon', 'lightseagreen', 'lightskyblue', 'lightslategray',
+		'lightslategrey', 'lightsteelblue', 'lightyellow', 'lime', 'limegreen', 'linen', 'magenta', 'maroon',
+		'mediumaquamarine', 'mediumblue', 'mediumorchid', 'mediumpurple', 'mediumseagreen', 'mediumslateblue',
+		'mediumspringgreen', 'mediumturquoise', 'mediumvioletred', 'midnightblue', 'mintcream', 'mistyrose',
+		'moccasin', 'navajowhite', 'navy', 'oldlace', 'olive', 'olivedrab', 'orange', 'orangered', 'orchid',
+		'palegoldenrod', 'palegreen', 'paleturquoise', 'palevioletred', 'papayawhip', 'peachpuff', 'peru', 'pink',
+		'plum', 'powderblue', 'purple', 'red', 'rosybrown', 'royalblue', 'saddlebrown', 'salmon', 'sandybrown',
+		'seagreen', 'seashell', 'sienna', 'silver', 'skyblue', 'slateblue', 'slategray', 'slategrey', 'snow',
+		'springgreen', 'steelblue', 'tan', 'teal', 'thistle', 'tomato', 'turquoise', 'violet', 'wheat',
+		'white', 'whitesmoke', 'yellow', 'yellowgreen'
+	];
 
-	$scope.penColor = $scope.colorList[0];
-	tempPenColor = $scope.colorList[0];
+
+	$scope.penColor = 'blue';
+	tempPenColor = 'blue';
 
 	$scope.brushSize = 3;
 	$scope.showColorDdl = true;
@@ -55,6 +75,21 @@ app.controller('appCtrl', function($scope) {
 		$scope.curIcon = "pen";
 	};
 
+});
+
+app.directive('canvasBgWhite', function() {
+	return {
+		restrict: 'A',
+		link: function($scope, ele, attr) {
+			// console.log(el);
+			angular.element(ele[0]).ready(function() {
+				var elContext = ele[0].getContext('2d');
+				elContext.fillStyle = 'white';
+				elContext.fillRect(0, 0, ele[0].width, ele[0].height);
+			});
+
+		}
+	};
 });
 
 angular.element(document).ready(function() {

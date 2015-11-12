@@ -68,7 +68,6 @@ function Board() {
     var ClearCanvas = function() {
         var el = document.getElementById(boardId);
         var elContext = el.getContext('2d');
-        elContext.clearRect(0, 0, el.width, el.height);
         elContext.fillStyle = 'white';
         elContext.fillRect(0, 0, el.width, el.height);
     };
@@ -82,6 +81,23 @@ function Board() {
         fileDownload.download = "board.jpg";
         fileDownload.href = elData.replace('image/png', 'image/octet-stream');
         fileDownload.click();
+
+
+        // var el = document.getElementById(boardId);
+        // var elData=el.getContext('2d').getImageData(0, 0, el.width, el.height);
+
+        // var tempEl = document.createElement('canvas');
+        // var tempElContext=tempEl.getContext('2d');
+        // tempElContext.fillStyle = 'white';
+        // tempElContext.fillRect(0, 0, el.width, el.height);
+        // tempElContext.putImageData(elData,0, 0);
+
+        // var imgData = tempEl.toDataURL();
+
+        // var fileDownload = document.createElement('a');
+        // fileDownload.download = "board.jpg";
+        // fileDownload.href = imgData.replace('image/png', 'image/octet-stream');
+        // fileDownload.click();
     };
 
 }
