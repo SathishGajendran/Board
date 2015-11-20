@@ -71,7 +71,7 @@ app.controller('appCtrl', function($scope) {
 
 	$scope.selectPen = function() {
 		$scope.showColorDdl = true;
-		$scope.penColor = tempPenColor;
+		$scope.penColor = $scope.penColor === 'white' ? tempPenColor : $scope.penColor;
 		$scope.curIcon = "pen";
 	};
 
