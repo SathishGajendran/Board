@@ -1,0 +1,14 @@
+{
+    "name": "Paint",
+    "short_name": "Paint",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "white",
+    "description": "A simple paint application",
+    "icons": [{
+        "src": "assets/icons/paintbrush.jpg",
+        "sizes": "72x72 96x96 128x128 256x256",
+        "type": "image/jpg"
+    }],
+    "related_applications": []
+}
