@@ -12,9 +12,6 @@
 	<link rel="stylesheet" href="public/stylesheets/main.css" />
 	<link rel="manifest" href="manifest.webmanifest">
 	<link rel="icon" href="assets/icons/paintbrush.jpg">
-	<script>
-		screen.orientation.lock('landscape');
-	</script>
 </head>
 
 <body ng-controller="appCtrl">
@@ -53,6 +50,11 @@
 	</div>
 	<script src="public/javascripts/canvas.js"></script>
 	<script src="public/javascripts/main.js"></script>
+	<script>
+		$(document).ready(function () {
+			screen.orientation.lock('landscape');
+		});
+	</script>
 </body>
 
 </html>
