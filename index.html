@@ -25,7 +25,7 @@
 	<div class="tools row">
 		<!-- <select id="penColor" class="col-md-12 space" ng-model="penColor" ng-options="color for color in colorList" ></select>ng-class="getCanvasIcon()" -->
 		<select id="penColor" class="btn btn-default space" ng-model="penColor" ng-class="!showColorDdl?'hide':''" style="background-color:{{penColor}}"
-		    title="Pen Color">
+		 title="Pen Color">
 			<option ng-repeat="color in colorList" ng-value="{{color}}" style="background-color:white">{{color}}</option>
 		</select>
 		<button class="btn btn-default space" ng-click="selectPen()" title="Pen">
@@ -54,6 +54,15 @@
 		$(document).ready(function () {
 			screen.orientation.lock('landscape');
 		});
+		window.addEventListener("beforeinstallprompt", ev => {
+			ev.preventDefault();
+			ev.prompt();
+		});
+		if ('serviceWorker' in navigator) {
+			navigator.serviceWorker
+				.register('/sw.js')
+				.then(function () { console.log('Service Worker Registered'); });
+		}
 	</script>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-73751132-3"></script>
