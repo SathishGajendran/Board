@@ -54,10 +54,6 @@
 		$(document).ready(function () {
 			screen.orientation.lock('landscape');
 		});
-		window.addEventListener("beforeinstallprompt", ev => {
-			ev.preventDefault();
-			ev.prompt();
-		});
 		if ('serviceWorker' in navigator) {
 			navigator.serviceWorker
 				.register('/Board/sw.js')
