@@ -5,7 +5,7 @@ self.addEventListener('install', function(e) {
         '/Board/public/javascripts/canvas.js',
         '/Board/public/javascripts/main.js',
         '/Board/public/stylesheets/main.css',
-        '/Board/assets/icons/paintbrush.jpg',
+        '/Board/assets/icons/paintbrush.png',
         '/Board/assets/icons/pen.cur',
         '/Board/assets/icons/eraser.cur'
       ]);
