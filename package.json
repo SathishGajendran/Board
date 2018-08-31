@@ -1,0 +1,16 @@
+{
+  "name": "Board",
+  "version": "1.0.0",
+  "description": "Board",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://sathishgajendran@bitbucket.org/sathishgajendran/board.git"
+  },
+  "author": "Sathish G. (sathish.gajendran@gmail.com)",
+  "license": "ISC",
+  "private": true
+}

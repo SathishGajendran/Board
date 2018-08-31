@@ -1,0 +1,19 @@
+{
+    "name": "Paint",
+    "short_name": "Paint",
+    "start_url": ".",
+    "display": "fullscreen",
+    "background_color": "white",
+    "description": "A simple paint application",
+    "icons": [{
+        "src": "assets/icons/paintbrush.png",
+        "sizes": "72x72 96x96 128x128 256x256",
+        "type": "image/png"
+    }, {
+        "src": "assets/icons/paintbrush.png",
+        "sizes": "144x144",
+        "type": "image/png"
+    }],
+    "orientation": "landscape",
+    "related_applications": []
+}

@@ -1,0 +1,42 @@
+
+body{
+	overflow: hidden;
+	padding: :0;
+	margin: 0;
+}
+
+.tools{
+	position:absolute;
+	top:2%;
+	right:2%;
+}
+
+.header{
+	position:absolute;
+	top:2%;
+	left:47%;
+	-webkit-user-select: none;
+}
+
+.space{
+	margin-right: 2px;
+}
+
+.footer{
+	position: absolute;
+	bottom:2%;
+	right:2%;
+	-webkit-user-select: none;
+}
+
+.pen: {
+	cursor: url(../../assets/icons/pen.cur),default;
+}
+
+.eraser{
+	cursor: url(../../assets/icons/eraser.cur),default;
+}
+
+select#penColor {
+     width: 42px; 
+}
