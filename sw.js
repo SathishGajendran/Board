@@ -2,6 +2,7 @@ self.addEventListener('install', function(e) {
   e.waitUntil(
     caches.open('paint').then(function(cache) {
       return cache.addAll([
+        '/Board/index.html',
         '/Board/public/javascripts/canvas.js',
         '/Board/public/javascripts/main.js',
         '/Board/public/stylesheets/main.css',
