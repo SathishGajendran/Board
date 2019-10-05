@@ -1,7 +1,7 @@
 
 body {
 	overflow: hidden;
-	overscroll-behavior: hidden;
+	overscroll-behavior: none;
 	padding: 0;
 	margin: 0;
 }
