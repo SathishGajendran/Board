@@ -1,8 +1,8 @@
-var app = angular.module('Board', []);
+const app = angular.module('Board', []);
 
 app.controller('appCtrl', function($scope) {
-	var mainBoard = new Board("board");
-	var tempPenColor;
+	const mainBoard = new Board("board");
+	let tempPenColor;
 	$scope.boardWidth = window.innerWidth + "px";
 	$scope.boardHeight = window.innerHeight + "px";
 	// $scope.boardMarginTop = window.innerHeight * 0.05 + "px";
@@ -47,8 +47,8 @@ app.controller('appCtrl', function($scope) {
 	// };
 
 	$scope.brushSizeList = (function() {
-		var n = [];
-		for (var i = 0; i < 100; i++) {
+		let n = [];
+		for (let i = 0; i < 100; i++) {
 			n.push(i + 1);
 		}
 		return n;
@@ -83,7 +83,7 @@ app.directive('canvasBgWhite', function() {
 		link: function($scope, ele, attr) {
 			// console.log(el);
 			angular.element(ele[0]).ready(function() {
-				var elContext = ele[0].getContext('2d');
+				let elContext = ele[0].getContext('2d');
 				elContext.fillStyle = 'white';
 				elContext.fillRect(0, 0, ele[0].width, ele[0].height);
 			});

@@ -1,34 +1,34 @@
 function Board() {
-    var self = this;
-    var boardId = arguments[0];
-    var canvas = $("#" + boardId);
-    var canvasContext = document.getElementById(arguments[0]).getContext('2d');
-    var mouseCanvasClick = false;
-    var prevX, prevY;
+    const self = this;
+    const boardId = arguments[0];
+    const canvas = $("#" + boardId);
+    const canvasContext = document.getElementById(boardId).getContext('2d');
+    let mouseCanvasClick = false;
+    let prevX, prevY;
 
-    var pointerDown = function(e) {
+    const pointerDown = function(e) {
         mouseCanvasClick = true;
         prevX = e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX - this.offsetLeft;
         prevY = e.originalEvent.touches ? e.originalEvent.touches[0].pageY : e.pageY - this.offsetTop;
         self.draw(prevX + 1, prevY + 1);
     };
 
-    var pointerMove = function(e) {
+    const pointerMove = function(e) {
         if (mouseCanvasClick) {
-            var x = e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX - this.offsetLeft;
-            var y = e.originalEvent.touches ? e.originalEvent.touches[0].pageY : e.pageY - this.offsetTop;
+            let x = e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX - this.offsetLeft;
+            let y = e.originalEvent.touches ? e.originalEvent.touches[0].pageY : e.pageY - this.offsetTop;
             self.draw(x, y);
         }
     };
 
-    var pointerUp = function(e) {
+    const pointerUp = function(e) {
         mouseCanvasClick = false;
     };
 
-    var pointerEnter = function(e) {
+    const pointerEnter = function(e) {
         if (mouseCanvasClick) {
-            var x = e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX - this.offsetLeft;
-            var y = e.originalEvent.touches ? e.originalEvent.touches[0].pageY : e.pageY - this.offsetTop;
+            let x = e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX - this.offsetLeft;
+            let y = e.originalEvent.touches ? e.originalEvent.touches[0].pageY : e.pageY - this.offsetTop;
             self.draw(x, y);
         }
     };
@@ -65,9 +65,9 @@ function Board() {
         }
     };
 
-    var ClearCanvas = function() {
-        var el = document.getElementById(boardId);
-        var elContext = el.getContext('2d');
+    const ClearCanvas = function() {
+        let el = document.getElementById(boardId);
+        let elContext = el.getContext('2d');
         elContext.fillStyle = 'white';
         elContext.fillRect(0, 0, el.width, el.height);
     };
@@ -75,26 +75,26 @@ function Board() {
     self.forceClear = ClearCanvas;
 
     self.snap = function() {
-        var el = document.getElementById(boardId);
-        var elData = el.toDataURL();
-        var fileDownload = document.createElement('a');
+        let el = document.getElementById(boardId);
+        let elData = el.toDataURL();
+        let fileDownload = document.createElement('a');
         fileDownload.download = "board.jpg";
         fileDownload.href = elData.replace('image/png', 'image/octet-stream');
         fileDownload.click();
 
 
-        // var el = document.getElementById(boardId);
-        // var elData=el.getContext('2d').getImageData(0, 0, el.width, el.height);
+        // let el = document.getElementById(boardId);
+        // let elData=el.getContext('2d').getImageData(0, 0, el.width, el.height);
 
-        // var tempEl = document.createElement('canvas');
-        // var tempElContext=tempEl.getContext('2d');
+        // let tempEl = document.createElement('canvas');
+        // let tempElContext=tempEl.getContext('2d');
         // tempElContext.fillStyle = 'white';
         // tempElContext.fillRect(0, 0, el.width, el.height);
         // tempElContext.putImageData(elData,0, 0);
 
-        // var imgData = tempEl.toDataURL();
+        // let imgData = tempEl.toDataURL();
 
-        // var fileDownload = document.createElement('a');
+        // let fileDownload = document.createElement('a');
         // fileDownload.download = "board.jpg";
         // fileDownload.href = imgData.replace('image/png', 'image/octet-stream');
         // fileDownload.click();

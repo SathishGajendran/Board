@@ -1,42 +1,51 @@
 
-body{
+body {
 	overflow: hidden;
-	padding: :0;
+	overscroll-behavior: hidden;
+	padding: 0;
 	margin: 0;
 }
 
-.tools{
+.tools {
 	position:absolute;
 	top:2%;
 	right:2%;
 }
 
-.header{
+.header {
 	position:absolute;
 	top:2%;
 	left:47%;
 	-webkit-user-select: none;
 }
 
-.space{
+.space {
 	margin-right: 2px;
 }
 
-.footer{
+.footer {
 	position: absolute;
 	bottom:2%;
 	right:2%;
 	-webkit-user-select: none;
 }
 
-.pen: {
+.pen {
 	cursor: url(../../assets/icons/pen.cur),default;
 }
 
-.eraser{
+.eraser {
 	cursor: url(../../assets/icons/eraser.cur),default;
 }
 
 select#penColor {
      width: 42px; 
+}
+
+.tools.row * {
+	height: 32px;
+}
+
+.tools.row .btn {
+	outline: unset !important;
 }
